@@ -1,0 +1,12 @@
+{
+    "python.pythonPath": "D:\\python_venv\\tutorial-venv\\Scripts\\python.exe",
+    "python.linting.pylintEnabled": true,
+    "python.linting.enabled": true,
+    "python.autoComplete.extraPaths": [
+        "D:\\python_venv\\tutorial-venv",
+        "E:\\temp\\work\\self\\vscode_python_note\\src",
+    ],
+    "python.autoComplete.addBrackets": true,
+    "files.autoSave": "afterDelay",
+    "files.autoSaveDelay": 500,
+}
