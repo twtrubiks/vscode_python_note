@@ -72,7 +72,7 @@ Preferences: Open Workspace Settings : 只在你的工作目錄內才會生效 (
     "files.autoSave": "onFocusChange", // 是否自動儲存檔案
 
     // 注意，win 用戶都要使用 "\\"
-    "python.pythonPath": "C:\\Users\\twtru\\Anaconda3\\envs\\venv_temp\\python.exe", // 預設的 PYTHON 執行環境
+    //"python.pythonPath": "C:\\Users\\twtru\\Anaconda3\\envs\\venv_temp\\python.exe", // 預設的 PYTHON 執行環境
 
     "extensions.ignoreRecommendations": true, // 是否忽略顯示建議的套件
     "files.encoding": "utf8", // 設定預設編碼
@@ -87,6 +87,8 @@ Preferences: Open Workspace Settings : 只在你的工作目錄內才會生效 (
     "workbench.iconTheme": "vscode-icons",  // 需安裝 vscode-icons
 }
 ```
+
+( `python.pythonPath` 這個其實不用另外設定，已註解掉 )
 
 ( 其實 json 是不適合註解的，所以才會變成這樣，但不註解我怕大家不了解 )
 
@@ -109,7 +111,7 @@ Preferences: Open Workspace Settings : 只在你的工作目錄內才會生效 (
     // Workspace Settings
 
     // virtual environments 中的 python 執行檔
-    "python.pythonPath": "C:\\Users\\twtru\\OneDrive\\work\\venv\\venv_demo\\Scripts\\python.exe",
+    // "python.pythonPath": "C:\\Users\\twtru\\OneDrive\\work\\venv\\venv_demo\\Scripts\\python.exe",
 
     // 可以設定你放全部的 venvs 環境的根目錄資料夾
     "python.venvPath": "C:\\Users\\twtru\\OneDrive\\work\\venv",
@@ -120,7 +122,9 @@ Preferences: Open Workspace Settings : 只在你的工作目錄內才會生效 (
 }
 ```
 
-( 其實 Workspace Settings 這邊的設定，除了 python.pythonPath 之外，都可以搬到 User Settings 裡面)
+( `python.pythonPath` 這個其實不用另外設定，已註解掉 )
+
+( 其實 Workspace Settings 這邊的設定，都可以搬到 User Settings 裡面)
 
 如果你的 python.venvPath 有設定對，你看你的左下角
 
@@ -166,9 +170,11 @@ linting 有很多種，這邊選擇 pylint，更多資訊可參考 [Linting Pyth
 
 一定有人問 VScode 是否有 auto Import 以及 auto complete 的功能:smile:
 
-這功能其實在 VScode 上是有的 ( 只是可能不夠完整，pylint 建議啟用 )，
+Vscode 原生是不支援 auto Import 而且不完整，
 
-看下面這個例子，
+這些功能其實需要搭配 [Importmagic](https://marketplace.visualstudio.com/items?itemName=brainfit.vscode-importmagic&fbclid=IwAR2WIhgRxvxeCv3vEGDc56dDQp2idFuDCDPgDqF2vXAiF7nQ4eoDGL_2q7E):smirk: ( pylint 建議啟用 )，
+
+當你安裝好 Importmagic 之後 ( 建議重啟 )，看下面這個例子，
 
 當我輸入 `datetim` 的時候，他就會偵測到
 
@@ -188,13 +194,13 @@ linting 有很多種，這邊選擇 pylint，更多資訊可參考 [Linting Pyth
 
 ![alt tag](https://i.imgur.com/7Fgn9Rl.png)
 
-這時侯，我們就需要透過 [Importmagic](https://marketplace.visualstudio.com/items?itemName=brainfit.vscode-importmagic&fbclid=IwAR2WIhgRxvxeCv3vEGDc56dDQp2idFuDCDPgDqF2vXAiF7nQ4eoDGL_2q7E) 這個套件來改善他，:smirk:
+這時侯，我們就需要透過
 
 [settings.json](https://github.com/twtrubiks/vscode_python_note/blob/master/.vscode/settings.json)
 
 ```json
-    {
-    "python.pythonPath": "D:\\python_venv\\tutorial-venv\\Scripts\\python.exe",  //已說明過
+{
+    //"python.pythonPath": "D:\\python_venv\\tutorial-venv\\Scripts\\python.exe",  //已說明過
     "python.linting.pylintEnabled": true, //已說明過
     "python.linting.enabled": true, //已說明過
     "python.autoComplete.extraPaths": [
