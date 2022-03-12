@@ -1,5 +1,5 @@
 {
-    // "python.pythonPath": "D:\\python_venv\\tutorial-venv\\Scripts\\python.exe",
+    // "python.defaultInterpreterPath": "D:\\python_venv\\tutorial-venv\\Scripts\\python.exe",
     "python.linting.pylintEnabled": true,
     "python.linting.enabled": true,
     "python.autoComplete.extraPaths": [

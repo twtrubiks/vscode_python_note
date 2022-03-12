@@ -72,7 +72,7 @@ Preferences: Open Workspace Settings : 只在你的工作目錄內才會生效 (
     "files.autoSave": "onFocusChange", // 是否自動儲存檔案
 
     // 注意，win 用戶都要使用 "\\"
-    //"python.pythonPath": "C:\\Users\\twtru\\Anaconda3\\envs\\venv_temp\\python.exe", // 預設的 PYTHON 執行環境
+    //"python.defaultInterpreterPath": "C:\\Users\\twtru\\Anaconda3\\envs\\venv_temp\\python.exe", // 預設的 PYTHON 執行環境
 
     "extensions.ignoreRecommendations": true, // 是否忽略顯示建議的套件
     "files.encoding": "utf8", // 設定預設編碼
@@ -88,7 +88,7 @@ Preferences: Open Workspace Settings : 只在你的工作目錄內才會生效 (
 }
 ```
 
-( `python.pythonPath` 這個其實不用另外設定，已註解掉 )
+( `python.defaultInterpreterPath` 這個其實不用另外設定，已註解掉 )
 
 ( 其實 json 是不適合註解的，所以才會變成這樣，但不註解我怕大家不了解 )
 
@@ -111,7 +111,7 @@ Preferences: Open Workspace Settings : 只在你的工作目錄內才會生效 (
     // Workspace Settings
 
     // virtual environments 中的 python 執行檔
-    // "python.pythonPath": "C:\\Users\\twtru\\OneDrive\\work\\venv\\venv_demo\\Scripts\\python.exe",
+    // "python.defaultInterpreterPath": "C:\\Users\\twtru\\OneDrive\\work\\venv\\venv_demo\\Scripts\\python.exe",
 
     // 可以設定你放全部的 venvs 環境的根目錄資料夾
     "python.venvPath": "C:\\Users\\twtru\\OneDrive\\work\\venv",
@@ -122,7 +122,7 @@ Preferences: Open Workspace Settings : 只在你的工作目錄內才會生效 (
 }
 ```
 
-( `python.pythonPath` 這個其實不用另外設定，已註解掉 )
+( `python.defaultInterpreterPath` 這個其實不用另外設定，已註解掉 )
 
 ( 其實 Workspace Settings 這邊的設定，都可以搬到 User Settings 裡面)
 
@@ -200,7 +200,7 @@ Vscode 原生是不支援 auto Import 而且不完整，
 
 ```json
 {
-    //"python.pythonPath": "D:\\python_venv\\tutorial-venv\\Scripts\\python.exe",  //已說明過
+    //"python.defaultInterpreterPath": "D:\\python_venv\\tutorial-venv\\Scripts\\python.exe",  //已說明過
     "python.linting.pylintEnabled": true, //已說明過
     "python.linting.enabled": true, //已說明過
     "python.autoComplete.extraPaths": [
