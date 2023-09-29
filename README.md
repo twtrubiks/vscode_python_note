@@ -164,6 +164,26 @@ linting 有很多種，這邊選擇 pylint，更多資訊可參考 [Linting Pyth
 
 ![alt tag](https://i.imgur.com/sX4vqc9.png)
 
+如果成功設定,
+
+在 problems 底下會有很多提醒 ( code 會有一些毛毛蟲 )
+
+![alt tag](https://i.imgur.com/ETFCjBX.png)
+
+( 如果一直沒正確啟用 pylint, 可以重新開啟 vscode 或檢查安裝環境 )
+
+也可以新增 `.pylintrc` 設定一些過濾
+
+```text
+[MASTER]
+# Exclude specific files or directories (comma-separated)
+# ignore=.vscode/*,/test/src/tests/*
+# ignore-patterns=**/test/src/tests/*.py
+
+[pylint.messages_control]
+disable = C0115,C0116,C0115,W0718
+```
+
 ## Importmagic
 
 * [Youtube - Visual Studio Code Python Importmagic - Auto import,complete](https://youtu.be/5MgvnPKfrMg)

@@ -1,0 +1,8 @@
+[MASTER]
+# Exclude specific files or directories (comma-separated)
+# 這邊設定很奇怪  暫時未解決
+# ignore=.vscode/*,/test/src/tests/*
+# ignore-patterns=**/test/src/tests/*.py
+
+[pylint.messages_control]
+disable = C0115,C0116,C0115,W0718
