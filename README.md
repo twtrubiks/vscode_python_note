@@ -184,7 +184,161 @@ linting 有很多種，這邊選擇 pylint，更多資訊可參考 [Linting Pyth
 disable = C0115,C0116,C0115,W0718
 ```
 
-## Importmagic
+## 推薦的擴充套件
+
+### Todo Tree
+
+顯示 TODO, FIXME, etc. comment tags in a tree view
+
+[Todo Tree](https://marketplace.visualstudio.com/items?itemName=Gruntfuggly.todo-tree)
+
+### YAML
+
+YAML 格式工具
+
+[YAML](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-yaml)
+
+### Rainbow CSV
+
+CSV 格式工具
+
+[Rainbow CSV](https://marketplace.visualstudio.com/items?itemName=mechatroner.rainbow-csv)
+
+### One Dark Pro
+
+Atom's iconic One Dark theme
+
+[One Dark Pro](https://marketplace.visualstudio.com/items?itemName=zhuangtongfa.Material-theme)
+
+### Git History
+
+查看 git 的工具
+
+[Git History](https://marketplace.visualstudio.com/items?itemName=donjayamanne.githistory)
+
+### Code Spell Checker
+
+檢查錯字.
+
+[Code Spell Checker](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker)
+
+### EditorConfig for VS Code
+
+統一設定檔案 可參考 [.editorconfig](.editorconfig)
+
+[EditorConfig for VS Code](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig)
+
+### Ruff
+
+更強大更快的 Python linter (使用 Rust 寫的)
+
+[Ruff](https://marketplace.visualstudio.com/items?itemName=charliermarsh.ruff)
+
+```cmd
+pip install ruff
+```
+
+設定 Ruff 為預設的 formatter,
+
+```json
+{
+  "[python]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "charliermarsh.ruff"
+  }
+}
+```
+
+設定自動 import 排版以及 fixAll
+
+```json
+{
+  "[python]": {
+    "editor.codeActionsOnSave": {
+      "source.fixAll.ruff": "explicit",
+      "source.organizeImports.ruff": "explicit"
+    }
+  }
+}
+
+```
+
+### Python Debugger
+
+[Python Debugger](https://marketplace.visualstudio.com/items?itemName=ms-python.debugpy)
+
+建議搭配 [Python debugging in VS Code](https://code.visualstudio.com/docs/python/debugging) 一起觀看
+
+必要時需要安裝 `pip install debugpy`
+
+`request` 主要有 `launch` 和 `attach`,
+
+`launch`
+
+這個就是最一般從 vscode 中 debug 重頭開始這樣.
+
+`attach`
+
+差別在於, 是調用已經啟動的進程, 意思就是必須再開一個視窗去執行這個 debug,
+
+通常會用在已經運行的程式, 或是外部工具啟用的程序(像是 docker)
+
+這兩個的差別使用 [vscode-django-note](https://github.com/twtrubiks/vscode_django_note) 來參考.
+
+```json
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Django launch",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}\\manage.py",
+            "args": [
+                "runserver",
+                "--noreload",
+            ],
+            "django": true
+        },
+        {
+            "name": "Django attach",
+            "type": "debugpy",
+            "request": "attach",
+            "connect": {
+                "host": "localhost",
+                "port": 18000
+            },
+            "django": true
+        }
+    ]
+}
+```
+
+`launch` Django launch
+
+這很簡單, 中斷點開下去就可以了.
+
+`attach` Django attach
+
+首先, 先打開一個 terminal 執行 django, 並且要監聽一個 port, 這邊設定 18000
+
+```cmd
+python -m debugpy --listen 0.0.0.0:18000 manage.py runserver 0.0.0.0:8000
+```
+
+接著再開啟一個 terminal 去執行中斷點 Django attach (也是設定 18000 port),
+
+透過這個就可以成功的進入中斷點.
+
+### Dev Containers
+
+vsocde 可以在 docker 內建立容器並且開發.
+
+[Dev Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers)
+
+### Importmagic
+
+這個已經一陣子沒更新了.
 
 * [Youtube - Visual Studio Code Python Importmagic - Auto import,complete](https://youtu.be/5MgvnPKfrMg)
 

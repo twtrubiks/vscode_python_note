@@ -9,4 +9,9 @@
     "python.autoComplete.addBrackets": true,
     "files.autoSave": "afterDelay",
     "files.autoSaveDelay": 500,
+    
+    "[python]": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "charliermarsh.ruff"
+      }
 }
