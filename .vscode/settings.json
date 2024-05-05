@@ -1,12 +1,30 @@
 {
-    // "python.defaultInterpreterPath": "D:\\python_venv\\tutorial-venv\\Scripts\\python.exe",
-    "python.linting.pylintEnabled": true,
-    "python.linting.enabled": true,
-    "python.autoComplete.extraPaths": [
-        "D:\\python_venv\\tutorial-venv",
-        "E:\\temp\\work\\self\\vscode_python_note\\src",
-    ],
-    "python.autoComplete.addBrackets": true,
-    "files.autoSave": "afterDelay",
-    "files.autoSaveDelay": 500,
+    // "python.defaultInterpreterPath": "/venv/bin/python3",
+    // "window.zoomLevel": 1, // 視窗縮放
+    "editor.fontSize": 22,
+    "editor.lineHeight": 26,
+    "terminal.integrated.fontFamily": "MesloLGS NF",
+    "editor.fontFamily": "MesloLGS NF",
+    "extensions.ignoreRecommendations": true, // 是否忽略顯示建議的套件
+    "files.trimTrailingWhitespace": true, // 儲存的時候，會幫你自動過濾多餘的空格
+    "files.encoding": "utf8", // 設定預設編碼
+    "files.autoGuessEncoding": false,
+
+    "files.autoSave": "onFocusChange", // 是否自動儲存檔案
+    // "files.autoSave": "afterDelay",
+    // "files.autoSaveDelay": 500,
+
+    // "workbench.colorTheme": "One Dark Pro", // 需安裝 One Dark Pro
+    "editor.selectionClipboard": false, // 關閉滑鼠滾輪中鍵複製功能
+    "editor.stickyScroll.enabled": true, // Sticky Scroll 預設是打開的
+
+    "[python]": {
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            // "source.fixAll": "explicit",
+            "source.organizeImports": "explicit",
+          }
+    },
+    "editor.defaultFormatter": "charliermarsh.ruff", // 需要安裝 Ruff
+    // "ruff.organizeImports": true
 }
