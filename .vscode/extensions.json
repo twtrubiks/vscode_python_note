@@ -10,6 +10,7 @@
         "gruntfuggly.todo-tree",
         "redhat.vscode-yaml",
         "zhuangtongfa.material-theme",
-        "editorconfig.editorconfig"
+        "editorconfig.editorconfig",
+        "ms-vscode-remote.remote-containers"
     ]
 }

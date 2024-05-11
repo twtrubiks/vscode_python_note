@@ -64,41 +64,6 @@ Preferences: Open Workspace Settings : 只在你的工作目錄內才會生效 (
 
 可參考 [settings.json](https://github.com/twtrubiks/vscode_python_note/blob/master/.vscode/settings.json)
 
-```json
-{
-    // User Settings
-
-    // "python.defaultInterpreterPath": "/venv/bin/python3",
-    // "window.zoomLevel": 1, // 視窗縮放
-    "editor.fontSize": 22,
-    "editor.lineHeight": 26,
-    "terminal.integrated.fontFamily": "MesloLGS NF",
-    "editor.fontFamily": "MesloLGS NF",
-    "extensions.ignoreRecommendations": true, // 是否忽略顯示建議的套件
-    "files.trimTrailingWhitespace": true, // 儲存的時候，會幫你自動過濾多餘的空格
-    "files.encoding": "utf8", // 設定預設編碼
-    "files.autoGuessEncoding": false,
-
-    "files.autoSave": "onFocusChange", // 是否自動儲存檔案
-    // "files.autoSave": "afterDelay",
-    // "files.autoSaveDelay": 500,
-
-    // "workbench.colorTheme": "One Dark Pro", // 需安裝 One Dark Pro
-    "editor.selectionClipboard": false, // 關閉滑鼠滾輪中鍵複製功能
-    "editor.stickyScroll.enabled": true, // Sticky Scroll 預設是打開的
-
-    "[python]": {
-        "editor.formatOnSave": true,
-        "editor.codeActionsOnSave": {
-            // "source.fixAll": "explicit",
-            "source.organizeImports": "explicit",
-          }
-    },
-    "editor.defaultFormatter": "charliermarsh.ruff" // 需要安裝 Ruff
-    // "ruff.organizeImports": true
-}
-```
-
 ( `python.defaultInterpreterPath` 這個其實不用另外設定，已註解掉 )
 
 ( 其實 json 是不適合註解的，所以才會變成這樣，但不註解我怕大家不了解 )
@@ -200,7 +165,8 @@ disable = C0115,C0116,C0115,W0718
         "gruntfuggly.todo-tree",
         "redhat.vscode-yaml",
         "zhuangtongfa.material-theme",
-        "editorconfig.editorconfig"
+        "editorconfig.editorconfig",
+        "ms-vscode-remote.remote-containers"
     ]
 }
 ```
@@ -259,7 +225,21 @@ Atom's iconic One Dark theme
 
 ### EditorConfig for VS Code
 
-統一設定檔案 可參考 [.editorconfig](.editorconfig)
+設定檔案範例 [.editorconfig](.editorconfig), 參考 [python-template](https://github.com/NLeSC/python-template/blob/main/.editorconfig)
+
+`root = true` editorconfig 很特殊的參數.
+
+`end_of_line = lf` 設定斷行字元.
+
+`insert_final_newline = true` 是否要保留最後空一行.
+
+`trim_trailing_whitespace = true` 是否要清除空白.
+
+`charset = utf-8` 編碼設定.
+
+`indent_style = space` 設定縮排要用 tab 還是 空白.
+
+`indent_size = 4` 設定空格數.
 
 [EditorConfig for VS Code](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig)
 
@@ -365,11 +345,87 @@ python -m debugpy --listen 0.0.0.0:18000 manage.py runserver 0.0.0.0:8000
 
 透過這個就可以成功的進入中斷點.
 
-### Dev Containers
+### Vscode Dev Containers 教學
 
-vsocde 可以在 docker 內建立容器並且開發.
+如果你是 Vscode 用戶而且也懂 docker, 非常推薦這個 [Dev Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) 套件.
 
-[Dev Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers)
+可以完全的在容器內開發, 不會再遇到煩人的環境不一致的問題,
+
+要在裡面 debug 也都是沒問題的.
+
+官方教學 [Dev Containers tutorial](https://code.visualstudio.com/docs/devcontainers/tutorial)
+
+首先, 先安裝 docker, 如果沒安裝可參考 [Docker 基本教學 - 從無到有 Docker-Beginners-Guide](https://github.com/twtrubiks/docker-tutorial)
+
+接著安裝 Dev Containers 這個套件,
+
+vscode 輸入 `ctrl + shift + p`
+
+`>Dev Containers: Add Dev Container Configuration Files`
+
+![img](https://i.imgur.com/xgqAYhg.png)
+
+接著選 `>Add configuration to workspace`
+
+(如果你想要建立在系統共用, 可選另一個)
+
+![img](https://i.imgur.com/nc7XbXe.png)
+
+接著這邊有很多 image, 選一個你喜歡的, 這邊我們選 python3
+
+![img](https://i.imgur.com/BXWB3If.png)
+
+接著會問你需不需要安裝其他的, 如果都不需要, 直接選 ok 就好
+
+![img](https://i.imgur.com/f4Hzmvf.png)
+
+之後你會看到幫你建立了一個資料夾 [.devcontainer/devcontainer.json](https://github.com/twtrubiks/vscode_python_note/blob/master/.devcontainer/devcontainer.json), 並且做相關設定
+
+如果遇到權限問題, 可以考慮加入 `"remoteUser": "root"` 這段,
+
+image 這邊可以放自己喜歡的 image, 這邊我們就先用這個範例,
+
+customizations 這邊其實就是設定容器裡面的 vscode 要怎麼設定,
+
+包含 vscode 個人化, 以及安裝哪些 vscode 套件之類的.
+
+mounts 這部份是像 docker 中的 Volumes (可以掛路徑進去)
+
+詳細的設定可參考 [Dev Container - json_reference](https://containers.dev/implementors/json_reference/)
+
+啟動容器,
+
+vscode 輸入 `ctrl + shift + p`
+
+`>Dev Containers: Rebuild and Reopen in Container`
+
+![img](https://i.imgur.com/5hcWy8h.png)
+
+接著就要等一下了, 因為它就是在做 `docker pull` 的事情, 所以如果是第一次都會比較慢.
+
+基本上它會再開啟一個 vscode, 這個 vscode 是已經在容器裡面了.
+
+分別下 `docker ps` 以及 `docker images` 查看,
+
+![img](https://i.imgur.com/Hc1w2FC.png)
+
+正在執行的容器就是我們建立了, images 則是剛剛設定的,
+
+你可以在這容器內做任何事情, 基本上它就是一個環境,
+
+也可以 debug
+
+![img](https://i.imgur.com/p4sveTd.png)
+
+預先定義的套件也都會裝起來
+
+![img](https://i.imgur.com/eMXMR7e.png)
+
+退出的方式, 點選左下角, 選擇 Close Remote Connection,
+
+或是用一般的 `docker compose down` 也可以
+
+![img](https://i.imgur.com/JtQJDJ3.png)
 
 ## 結論
 
