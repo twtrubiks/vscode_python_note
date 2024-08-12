@@ -1,0 +1,18 @@
+{
+    "recommendations": [
+        "streetsidesoftware.code-spell-checker",
+        "donjayamanne.githistory",
+        "mhutchie.git-graph",
+        "eamodio.gitlens",
+        "ms-python.vscode-pylance",
+        "ms-python.debugpy",
+        "ms-python.python",
+        "mechatroner.rainbow-csv",
+        "charliermarsh.ruff",
+        "gruntfuggly.todo-tree",
+        "redhat.vscode-yaml",
+        "zhuangtongfa.material-theme",
+        "editorconfig.editorconfig",
+        "ms-vscode-remote.remote-containers"
+    ]
+}

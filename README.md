@@ -4,7 +4,7 @@
 
 * [Youtube - Visual Studio Code Python 基本設定篇](https://youtu.be/tS4beaq9ies)
 
-* [Youtube - Visual Studio Code Python Importmagic - Auto import,complete](https://youtu.be/5MgvnPKfrMg)
+* [推薦的擴充套件](https://github.com/twtrubiks/vscode_python_note/tree/master?tab=readme-ov-file#%E6%8E%A8%E8%96%A6%E7%9A%84%E6%93%B4%E5%85%85%E5%A5%97%E4%BB%B6)
 
 ## 說明
 
@@ -22,11 +22,13 @@
 
 首先，別急著打開 VSCode，先來建立環境，如果你不知道如何建立環境，
 
-可參考這篇文章 [python venv 建立 virtual environments](https://github.com/twtrubiks/python-creation-of-virtual-environments)
+可參考這篇文章
 
-( 以前我教過大家 [使用 Anaconda 建立 Python 環境](https://github.com/twtrubiks/FaceDetect/tree/master/How%20Easy%20Install%20OpenCV%20%20for%20Python%20use%20Anaconda#%E4%BD%BF%E7%94%A8-anaconda-%E5%BB%BA%E7%AB%8B-python-%E7%92%B0%E5%A2%83)，但因為 Anaconda 實在很肥，
+- [python venv 建立 virtual environments](https://github.com/twtrubiks/python-creation-of-virtual-environments)
 
-如果沒有特別的需求，使用 python venv 即可 )
+- [使用 Anaconda 建立 Python 環境](https://github.com/twtrubiks/FaceDetect/tree/master/How%20Easy%20Install%20OpenCV%20%20for%20Python%20use%20Anaconda#%E4%BD%BF%E7%94%A8-anaconda-%E5%BB%BA%E7%AB%8B-python-%E7%92%B0%E5%A2%83)
+
+- [pyenv 教學](https://github.com/twtrubiks/python-notes/tree/master/pyenv_tutorial)
 
 這邊就先建立一個 venv_demo 的環境，
 
@@ -60,33 +62,7 @@ Preferences: Open Workspace Settings : 只在你的工作目錄內才會生效 (
 
 ![alt tag](https://i.imgur.com/2xVqcFS.png)
 
-```json
-{
-    // User Settings
-
-    "window.zoomLevel": 1, // 視窗縮放
-    // "editor.fontSize": 22,
-    // "editor.lineHeight": 26,
-    // "terminal.integrated.fontSize": 30, // terminal 字體大小
-    // "editor.formatOnSave": true, // 當儲存時，是否自動格式化
-    "files.autoSave": "onFocusChange", // 是否自動儲存檔案
-
-    // 注意，win 用戶都要使用 "\\"
-    //"python.defaultInterpreterPath": "C:\\Users\\twtru\\Anaconda3\\envs\\venv_temp\\python.exe", // 預設的 PYTHON 執行環境
-
-    "extensions.ignoreRecommendations": true, // 是否忽略顯示建議的套件
-    "files.encoding": "utf8", // 設定預設編碼
-    "files.trimTrailingWhitespace": true, // 儲存的時候，會幫你自動過濾多餘的空格
-    "files.autoGuessEncoding": false, // 是否自動猜測檔案的編碼
-    "terminal.integrated.shell.windows": "C:\\WINDOWS\\System32\\cmd.exe",
-    // "workbench.welcome.enabled": false, // 使否關閉 vscode 歡迎的顯示頁面
-    "workbench.startupEditor": "newUntitledFile",
-    "explorer.confirmDelete": false,
-
-    // "workbench.colorTheme": "One Dark Pro", // 需安裝 One Dark Pro
-    "workbench.iconTheme": "vscode-icons",  // 需安裝 vscode-icons
-}
-```
+可參考 [settings.json](https://github.com/twtrubiks/vscode_python_note/blob/master/.vscode/settings.json)
 
 ( `python.defaultInterpreterPath` 這個其實不用另外設定，已註解掉 )
 
@@ -105,26 +81,6 @@ Preferences: Open Workspace Settings : 只在你的工作目錄內才會生效 (
 這邊是我自己的設定，大家可以參考一下，
 
 ![alt tag](https://i.imgur.com/Bm1Foe7.png)
-
-```json
-{
-    // Workspace Settings
-
-    // virtual environments 中的 python 執行檔
-    // "python.defaultInterpreterPath": "C:\\Users\\twtru\\OneDrive\\work\\venv\\venv_demo\\Scripts\\python.exe",
-
-    // 可以設定你放全部的 venvs 環境的根目錄資料夾
-    "python.venvPath": "C:\\Users\\twtru\\OneDrive\\work\\venv",
-
-    "python.terminal.activateEnvironment": true, // 自動啟動環境
-    "python.linting.pylintEnabled": true,  // 需要 pip install pylint
-    "python.linting.enabled": true,  // 需要 pip install pylint
-}
-```
-
-( `python.defaultInterpreterPath` 這個其實不用另外設定，已註解掉 )
-
-( 其實 Workspace Settings 這邊的設定，都可以搬到 User Settings 裡面)
 
 如果你的 python.venvPath 有設定對，你看你的左下角
 
@@ -184,97 +140,304 @@ linting 有很多種，這邊選擇 pylint，更多資訊可參考 [Linting Pyth
 disable = C0115,C0116,C0115,W0718
 ```
 
-## Importmagic
+## 快捷鍵
 
-* [Youtube - Visual Studio Code Python Importmagic - Auto import,complete](https://youtu.be/5MgvnPKfrMg)
+環境以 linux 為主,
 
-一定有人問 VScode 是否有 auto Import 以及 auto complete 的功能:smile:
+快速到對應找到對應的 function 或 class : `Ctrl` + 左鍵 或是 `F12`
 
-Vscode 原生是不支援 auto Import 而且不完整，
+返回上一個位置 : `Ctrl` + `Alt` + `-`
 
-這些功能其實需要搭配 [Importmagic](https://marketplace.visualstudio.com/items?itemName=brainfit.vscode-importmagic&fbclid=IwAR2WIhgRxvxeCv3vEGDc56dDQp2idFuDCDPgDqF2vXAiF7nQ4eoDGL_2q7E):smirk: ( pylint 建議啟用 )，
+## 推薦的擴充套件
 
-當你安裝好 Importmagic 之後 ( 建議重啟 )，看下面這個例子，
-
-當我輸入 `datetim` 的時候，他就會偵測到
-
-![alt tag](https://i.imgur.com/PSTwXji.png)
-
-必且有 auto import 的功能
-
-![alt tag](https://i.imgur.com/eZKDzIE.png)
-
-當你第二次再打的時候，可能輸入 `d` 就會跳出選項了。
-
-![alt tag](https://i.imgur.com/LrqC6gz.png)
-
-但今天假設是我們自訂的 Class 可以自動 import 嗎:question:
-
-答案是不行的:cry:
-
-![alt tag](https://i.imgur.com/7Fgn9Rl.png)
-
-這時侯，我們就需要透過
-
-[settings.json](https://github.com/twtrubiks/vscode_python_note/blob/master/.vscode/settings.json)
+如何自動安裝, 已經幫大家放在 [extensions.json](https://github.com/twtrubiks/vscode_python_note/blob/master/.vscode/extensions.json),
 
 ```json
 {
-    //"python.defaultInterpreterPath": "D:\\python_venv\\tutorial-venv\\Scripts\\python.exe",  //已說明過
-    "python.linting.pylintEnabled": true, //已說明過
-    "python.linting.enabled": true, //已說明過
-    "python.autoComplete.extraPaths": [
-        "D:\\python_venv\\tutorial-venv",  // 設定你的 venv 的環境目錄資料夾，為了偵測一些 python library
-        "E:\\temp\\work\\self\\vscode_python_note\\src", // 目的是偵測自己自定義的 class
-    ],
-    "python.autoComplete.addBrackets": true, // 是否自動加上括號 (等等文章會補充說明)
-    "files.autoSave": "afterDelay", // delay 後儲存
-    "files.autoSaveDelay": 500,    // 延遲 500ms
+    "recommendations": [
+        "streetsidesoftware.code-spell-checker",
+        "donjayamanne.githistory",
+        "ms-python.vscode-pylance",
+        "ms-python.debugpy",
+        "ms-python.python",
+        "mechatroner.rainbow-csv",
+        "charliermarsh.ruff",
+        "gruntfuggly.todo-tree",
+        "redhat.vscode-yaml",
+        "zhuangtongfa.material-theme",
+        "editorconfig.editorconfig",
+        "ms-vscode-remote.remote-containers"
+    ]
 }
 ```
-這邊先補充說明一下 `"python.autoComplete.addBrackets": true`，
 
-假設今天輸入 `import os`，然後輸入 `os.getcwd`，當他跳出提示給你選的時候，
+打開 vscode 之後, 找到安裝 extensions 的地方, 輸入 `@recommended`,
 
-當你選擇它，會自動幫你補括號，也就是 `os.getcwd()`; 相反的，如果是設定為
+就可以看到自己定義的 extensions,
 
-`false`，你就只會顯示 `os.getcwd`。 ( 如果這邊看不懂建議看影片說明 )
+![alt tag](https://i.imgur.com/y9s8M5v.png)
 
-接著繼續講 [Importmagic](https://marketplace.visualstudio.com/items?itemName=brainfit.vscode-importmagic&fbclid=IwAR2WIhgRxvxeCv3vEGDc56dDQp2idFuDCDPgDqF2vXAiF7nQ4eoDGL_2q7E) 這個套件，
+如果你想要建立自己的 extensions 清單,
 
-最重要的就是設定 `"python.autoComplete.extraPaths"`，
+可以直接在 extension 上點選右鍵
 
-而且要設定正確，否則你會發現為什麼它不 work:question:
+![alt tag](https://i.imgur.com/bVIWLG5.png)
 
-( 我這邊是指定某個資料夾底下的 Class 而已，如果你要讓它全部都偵測到，也可以設定
+就會自動幫你加入 [extensions.json](https://github.com/twtrubiks/vscode_python_note/blob/master/.vscode/extensions.json) 底下了.
 
-`"E:\\temp\\work\\self\\vscode_python_note"`，其實就是設定這個目錄 )
+官網說明可參考 [Workspace recommended extensions](https://code.visualstudio.com/docs/editor/extension-marketplace#_workspace-recommended-extensions)
 
-如果你設定正確，當你切換到任意 python 檔案的時候，
+### Todo Tree
 
-請注意下面 ( 很重要 :exclamation::exclamation::exclamation:我被雷到，想說怎麼沒 work )
+顯示 TODO, FIXME, etc. comment tags in a tree view
 
-![alt tag](https://i.imgur.com/2WRtyPi.png)
+[Todo Tree](https://marketplace.visualstudio.com/items?itemName=Gruntfuggly.todo-tree)
 
-![alt tag](https://i.imgur.com/6ohigI0.png)
+### YAML
 
-一定要讓他 scan 完以及 index 都跑完，這樣才會有效果，
+YAML 格式工具
 
-當你每次改 code，儲存的時候也會重跑。
+[YAML](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-yaml)
 
-如果你設定正確，效果如下，可以偵測到自定義的 Class 了
+### Rainbow CSV
 
-![alt tag](https://i.imgur.com/4MS0RVx.png)
+CSV 格式工具
 
-也有 auto import 的功能
+[Rainbow CSV](https://marketplace.visualstudio.com/items?itemName=mechatroner.rainbow-csv)
 
-![alt tag](https://i.imgur.com/b6C6aQ1.png)
+### One Dark Pro
 
-第二次輸入，打幾個字就會跳出選項了
+Atom's iconic One Dark theme
 
-![alt tag](https://i.imgur.com/qx0XHHA.png)
+[One Dark Pro](https://marketplace.visualstudio.com/items?itemName=zhuangtongfa.Material-theme)
 
-以上就是 [Importmagic](https://marketplace.visualstudio.com/items?itemName=brainfit.vscode-importmagic&fbclid=IwAR2WIhgRxvxeCv3vEGDc56dDQp2idFuDCDPgDqF2vXAiF7nQ4eoDGL_2q7E) 的介紹。
+### Git History
+
+查看 git 的工具
+
+[Git History](https://marketplace.visualstudio.com/items?itemName=donjayamanne.githistory)
+
+### Git Graph
+
+查看 git log graph 工具
+
+[Git Graph](https://marketplace.visualstudio.com/items?itemName=mhutchie.git-graph)
+
+### GitLens — Git supercharged
+
+查看 git 的工具 - 在 code 上直接看到這行最後的修改是誰改的
+
+[GitLens — Git supercharged](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens)
+
+### Code Spell Checker
+
+檢查錯字.
+
+[Code Spell Checker](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker)
+
+### EditorConfig for VS Code
+
+設定檔案範例 [.editorconfig](.editorconfig), 參考 [python-template](https://github.com/NLeSC/python-template/blob/main/.editorconfig)
+
+`root = true` editorconfig 很特殊的參數.
+
+`end_of_line = lf` 設定斷行字元.
+
+`insert_final_newline = true` 是否要保留最後空一行.
+
+`trim_trailing_whitespace = true` 是否要清除空白.
+
+`charset = utf-8` 編碼設定.
+
+`indent_style = space` 設定縮排要用 tab 還是 空白.
+
+`indent_size = 4` 設定空格數.
+
+[EditorConfig for VS Code](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig)
+
+### Ruff
+
+更強大更快的 Python linter (使用 Rust 寫的)
+
+[Ruff](https://marketplace.visualstudio.com/items?itemName=charliermarsh.ruff)
+
+```cmd
+pip install ruff
+```
+
+設定 Ruff 為預設的 formatter,
+
+```json
+{
+  "[python]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "charliermarsh.ruff"
+  }
+}
+```
+
+設定自動 import 排版以及 fixAll
+
+```json
+{
+  "[python]": {
+    "editor.codeActionsOnSave": {
+      "source.fixAll.ruff": "explicit",
+      "source.organizeImports.ruff": "explicit"
+    }
+  }
+}
+
+```
+
+### Python Debugger
+
+[Python Debugger](https://marketplace.visualstudio.com/items?itemName=ms-python.debugpy)
+
+建議搭配 [Python debugging in VS Code](https://code.visualstudio.com/docs/python/debugging) 一起觀看
+
+必要時需要安裝 `pip install debugpy`
+
+`request` 主要有 `launch` 和 `attach`,
+
+`launch`
+
+這個就是最一般從 vscode 中 debug 重頭開始這樣.
+
+`attach`
+
+差別在於, 是調用已經啟動的進程, 意思就是必須再開一個視窗去執行這個 debug,
+
+通常會用在已經運行的程式, 或是外部工具啟用的程序(像是 docker)
+
+這兩個的差別使用 [vscode-django-note](https://github.com/twtrubiks/vscode_django_note) 來參考.
+
+```json
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Django launch",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}\\manage.py",
+            "args": [
+                "runserver",
+                "--noreload",
+            ],
+            "django": true
+        },
+        {
+            "name": "Django attach",
+            "type": "debugpy",
+            "request": "attach",
+            "connect": {
+                "host": "localhost",
+                "port": 18000
+            },
+            "django": true
+        }
+    ]
+}
+```
+
+`launch` Django launch
+
+這很簡單, 中斷點開下去就可以了.
+
+`attach` Django attach
+
+首先, 先打開一個 terminal 執行 django, 並且要監聽一個 port, 這邊設定 18000
+
+```cmd
+python -m debugpy --listen 0.0.0.0:18000 manage.py runserver 0.0.0.0:8000
+```
+
+接著再開啟一個 terminal 去執行中斷點 Django attach (也是設定 18000 port),
+
+透過這個就可以成功的進入中斷點.
+
+### Vscode Dev Containers 教學
+
+如果你是 Vscode 用戶而且也懂 docker, 非常推薦這個 [Dev Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) 套件.
+
+可以完全的在容器內開發, 不會再遇到煩人的環境不一致的問題,
+
+要在裡面 debug 也都是沒問題的.
+
+官方教學 [Dev Containers tutorial](https://code.visualstudio.com/docs/devcontainers/tutorial)
+
+首先, 先安裝 docker, 如果沒安裝可參考 [Docker 基本教學 - 從無到有 Docker-Beginners-Guide](https://github.com/twtrubiks/docker-tutorial)
+
+接著安裝 Dev Containers 這個套件,
+
+vscode 輸入 `ctrl + shift + p`
+
+`>Dev Containers: Add Dev Container Configuration Files`
+
+![img](https://i.imgur.com/xgqAYhg.png)
+
+接著選 `>Add configuration to workspace`
+
+(如果你想要建立在系統共用, 可選另一個)
+
+![img](https://i.imgur.com/nc7XbXe.png)
+
+接著這邊有很多 image, 選一個你喜歡的, 這邊我們選 python3
+
+![img](https://i.imgur.com/BXWB3If.png)
+
+接著會問你需不需要安裝其他的, 如果都不需要, 直接選 ok 就好
+
+![img](https://i.imgur.com/f4Hzmvf.png)
+
+之後你會看到幫你建立了一個資料夾 [.devcontainer/devcontainer.json](https://github.com/twtrubiks/vscode_python_note/blob/master/.devcontainer/devcontainer.json), 並且做相關設定
+
+如果遇到權限問題, 可以考慮加入 `"remoteUser": "root"` 這段,
+
+image 這邊可以放自己喜歡的 image, 這邊我們就先用這個範例,
+
+customizations 這邊其實就是設定容器裡面的 vscode 要怎麼設定,
+
+包含 vscode 個人化, 以及安裝哪些 vscode 套件之類的.
+
+mounts 這部份是像 docker 中的 Volumes (可以掛路徑進去)
+
+詳細的設定可參考 [Dev Container - json_reference](https://containers.dev/implementors/json_reference/)
+
+啟動容器,
+
+vscode 輸入 `ctrl + shift + p`
+
+`>Dev Containers: Rebuild and Reopen in Container`
+
+![img](https://i.imgur.com/5hcWy8h.png)
+
+接著就要等一下了, 因為它就是在做 `docker pull` 的事情, 所以如果是第一次都會比較慢.
+
+基本上它會再開啟一個 vscode, 這個 vscode 是已經在容器裡面了.
+
+分別下 `docker ps` 以及 `docker images` 查看,
+
+![img](https://i.imgur.com/Hc1w2FC.png)
+
+正在執行的容器就是我們建立了, images 則是剛剛設定的,
+
+你可以在這容器內做任何事情, 基本上它就是一個環境,
+
+也可以 debug
+
+![img](https://i.imgur.com/p4sveTd.png)
+
+預先定義的套件也都會裝起來
+
+![img](https://i.imgur.com/eMXMR7e.png)
+
+退出的方式, 點選左下角, 選擇 Close Remote Connection,
+
+或是用一般的 `docker compose down` 也可以
+
+![img](https://i.imgur.com/JtQJDJ3.png)
 
 ## 結論
 
