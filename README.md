@@ -4,13 +4,15 @@
 
 * [Youtube - Visual Studio Code Python 基本設定篇](https://youtu.be/tS4beaq9ies)
 
-* [推薦的擴充套件](https://github.com/twtrubiks/vscode_python_note/tree/master?tab=readme-ov-file#%E6%8E%A8%E8%96%A6%E7%9A%84%E6%93%B4%E5%85%85%E5%A5%97%E4%BB%B6)
+* [推薦的擴充套件](https://github.com/twtrubiks/vscode_python_note#%E6%8E%A8%E8%96%A6%E7%9A%84%E6%93%B4%E5%85%85%E5%A5%97%E4%BB%B6)
+
+* [VScode Dev Containers 教學](https://github.com/twtrubiks/vscode_python_note#vscode-dev-containers-教學)
 
 ## 說明
 
-最近剛好接觸到使用 VSCode 開發 Python，所以就有了這篇文章:smile:
+最近剛好接觸到使用 VSCode 開發 Python，所以就有了這篇文章 :smile:
 
-其實我之前都是使用 Pycharm Professional 來開發的 ( 雖然他要付費，但是功能真的強:+1:)
+其實我之前都是使用 Pycharm Professional 來開發的 ( 雖然他要付費，但是功能真的強 :+1: )
 
 如果想當免費仔，可以使用 VSCode，但我覺得需要稍微設定一下 ( 這篇文章會教大家 )。
 
@@ -357,9 +359,11 @@ python -m debugpy --listen 0.0.0.0:18000 manage.py runserver 0.0.0.0:8000
 
 透過這個就可以成功的進入中斷點.
 
-### Vscode Dev Containers 教學
+### VScode Dev Containers 教學
 
-如果你是 Vscode 用戶而且也懂 docker, 非常推薦這個 [Dev Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) 套件.
+* [Youtube Tutorial - VScode Dev Containers 教學 - Python(等待新增)](XXX)
+
+如果你是 VScode 用戶而且也懂 docker, 非常推薦這個 [Dev Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) 套件.
 
 可以完全的在容器內開發, 不會再遇到煩人的環境不一致的問題,
 
@@ -447,7 +451,7 @@ vscode 輸入 `ctrl + shift + p`
 
 ## Donation
 
-文章都是我自己研究內化後原創，如果有幫助到您，也想鼓勵我的話，歡迎請我喝一杯咖啡:laughing:
+文章都是我自己研究內化後原創，如果有幫助到您，也想鼓勵我的話，歡迎請我喝一杯咖啡 :laughing:
 
 ![alt tag](https://i.imgur.com/LRct9xa.png)
 
