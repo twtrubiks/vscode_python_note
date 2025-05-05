@@ -44,7 +44,7 @@
 
 ![alt tag](https://i.imgur.com/WzkoCTN.png)
 
-打開後，快捷鍵 `Ctrl+Shift+P`，然後輸入 settings
+打開後，快捷鍵 `Ctrl` + `Shift` + `P`，然後輸入 settings
 
 ![alt tag](https://i.imgur.com/HT7YSDt.png)
 
@@ -96,11 +96,11 @@ Preferences: Open Workspace Settings : 只在你的工作目錄內才會生效 (
 
 linting 有很多種，這邊選擇 pylint，更多資訊可參考 [Linting Python in Visual Studio Code](https://code.visualstudio.com/docs/python/linting)，
 
-儲存完畢後，快捷鍵 Ctrl+Shift+` 開啟 terminal，
+儲存完畢後，快捷鍵 `Ctrl` + `Shift` + `` ` `` 開啟 terminal，
 
 你會發現環境自動啟動了 ( 看前面的小括號 venv_demo )。
 
-( 另外一點要注意的是，VSCode 是偵測你有沒有 .py 的檔案，所以記得要在 .py 的檔案下 Ctrl+Shift+` 開啟 terminal，
+( 另外一點要注意的是，VSCode 是偵測你有沒有 .py 的檔案，所以記得要在 .py 的檔案下 `Ctrl` + `Shift` + `` ` `` 開啟 terminal，
 
 否則你會覺得很怪，一直無法自動啟動環境 )
 
@@ -114,7 +114,7 @@ linting 有很多種，這邊選擇 pylint，更多資訊可參考 [Linting Pyth
 
 ![alt tag](https://i.imgur.com/HCPyLlJ.png)
 
-也可以 快捷鍵 `Ctrl+Shift+P`，然後輸入 linting 檢查一下
+也可以 快捷鍵 `Ctrl` + `Shift` + `P`，然後輸入 linting 檢查一下
 
 ![alt tag](https://i.imgur.com/5V1BoUj.png)
 
@@ -375,7 +375,7 @@ python -m debugpy --listen 0.0.0.0:18000 manage.py runserver 0.0.0.0:8000
 
 接著安裝 Dev Containers 這個套件,
 
-vscode 輸入 `ctrl + shift + p`
+vscode 輸入 `Ctrl` + `Shift` + `P`
 
 `>Dev Containers: Add Dev Container Configuration Files`
 
@@ -411,7 +411,7 @@ mounts 這部份是像 docker 中的 Volumes (可以掛路徑進去)
 
 啟動容器,
 
-vscode 輸入 `ctrl + shift + p`
+vscode 輸入 `Ctrl` + `Shift` + `P`
 
 `>Dev Containers: Rebuild and Reopen in Container`
 
