@@ -6,7 +6,7 @@
 
 * [推薦的擴充套件](https://github.com/twtrubiks/vscode_python_note#%E6%8E%A8%E8%96%A6%E7%9A%84%E6%93%B4%E5%85%85%E5%A5%97%E4%BB%B6)
 
-* [VScode Dev Containers 教學](https://github.com/twtrubiks/vscode_python_note#vscode-dev-containers-教學)
+* [VScode Dev Containers 教學](https://github.com/twtrubiks/vscode_python_note#vscode-dev-containers-教學) - [Youtube Tutorial - VScode Dev Containers 教學 - Python](https://youtu.be/6jjYViLthi8)
 
 ## 說明
 
@@ -361,7 +361,7 @@ python -m debugpy --listen 0.0.0.0:18000 manage.py runserver 0.0.0.0:8000
 
 ### VScode Dev Containers 教學
 
-* [Youtube Tutorial - VScode Dev Containers 教學 - Python(等待新增)](XXX)
+* [Youtube Tutorial - VScode Dev Containers 教學 - Python](https://youtu.be/6jjYViLthi8)
 
 如果你是 VScode 用戶而且也懂 docker, 非常推薦這個 [Dev Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) 套件.
 
@@ -445,7 +445,7 @@ vscode 輸入 `Ctrl` + `Shift` + `P`
 
 ## 結論
 
-基本上 VSCode 可以設定的東西真的非常的多，大家可以自行摸索。:relaxed:
+基本上 VSCode 可以設定的東西真的非常的多，大家可以自行摸索 :relaxed:
 
 這篇是教大家一些很基本的設定，未來如果有機會，再介紹更多的功能給各位認識。
 
